@@ -311,6 +311,7 @@ $dark: #140f0a; // $gray-900 !default;
 // scss-docs-start theme-colors-map
 $theme-colors: (
   "primary": $primary,
+  "primary-100": #f7f2ee,
   "secondary": $secondary,
   "success": $success,
   "info": $info,
@@ -374,7 +375,7 @@ $enable-cssgrid: false !default;
 $enable-button-pointers: true !default;
 $enable-rfs: true !default;
 $enable-validation-icons: true !default;
-$enable-negative-margins: false !default;
+$enable-negative-margins: true !default;
 $enable-deprecation-messages: true !default;
 $enable-important-utilities: true !default;
 

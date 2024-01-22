@@ -1,7 +1,10 @@
 export const TopNavbar: React.FC = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed top-0 start-0 end-0">
+      <nav
+        className="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed top-0 start-0 end-0"
+        style={{ zIndex: 10 }}
+      >
         <div className="container">
           <a className="navbar-brand" href="#">
             <img src="./src/assets/images/logoWhite.svg" alt="Logo" />
