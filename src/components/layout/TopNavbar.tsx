@@ -1,8 +1,13 @@
+import { Link, useLocation } from "react-router-dom";
+
 export const TopNavbar: React.FC = () => {
+  const location = useLocation();
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed top-0 start-0 end-0"
+        className={`navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 end-0 ${
+          location.pathname === "/" ? "bg-transparent" : "bg-dark"
+        }`}
         style={{ zIndex: 10 }}
       >
         <div className="container">
@@ -21,21 +26,23 @@ export const TopNavbar: React.FC = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav align-items-center ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  客房旅宿
-                </a>
-              </li>
-              <li className="nav-item mx-8">
-                <a className="nav-link" href="#">
-                  會員登入
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="btn btn-primary text-white">立即訂房</a>
-              </li>
-            </ul>
+            {location.pathname !== "/login" && (
+              <ul className="navbar-nav align-items-center ms-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    客房旅宿
+                  </a>
+                </li>
+                <li className="nav-item mx-8">
+                  <Link to="/login" className="nav-link">
+                    會員登入
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a className="btn btn-primary text-white">立即訂房</a>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       </nav>
